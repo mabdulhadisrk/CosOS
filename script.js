@@ -62,10 +62,17 @@ closePanelButton.onclick = function(){
     terminalWindow.style.display = 'none';
 };
 StoreButton.onclick = function(){
-    alert("🛒 Opening LarOS Store... Establishing connection uplink.");
+    let choice = prompt(
+        "Welcome to LarOS Store!\nType a number to execute a protocol:\n\n1 - Open Friv ( Nostalgic Games website )\n2 - Open Wallpapers Selection"
+    );
+    if (choice ==="1"") {
+        alert("🛰️ Connecting Friv!");
+        window.open("https://www.friv.com/old/", "_blank");
+
+        }
 };
     MusicButton.onclick = function(){
-        alert("Opening spotify...");
+        alert("Opening Spotify...");
     }
 // 5) Live Clock System
 
