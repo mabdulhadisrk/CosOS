@@ -64,8 +64,8 @@ body{
     opacity:0.7;
 }
 /* styling the shortcuts such as LarOS Store and System Terminal */
-.shortcutGrid{
-    position:absolute;
+#BottomTaskbar{
+    position:fixed;
     left:20px;
     top:60px;
     gap:20px;
