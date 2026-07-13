@@ -37,8 +37,10 @@ const MinimizeButton = document.getElementById('minimizeButton');
     // hides welcome screen and reveals the desktop screen
 
     bootButton.onclick = function(){
-    welcomePage.style.display = 'none';
-    desktopPage.style.display = 'block';
+    welcomePage.style.opacity = '0';
+    welcomePage.style.visibility = 'hidden';
+    desktopPage.style.opacity ="1";
+    desktopPage.style.visibility = "visible";
     initializeHardwareMonitoring();
 };
 
