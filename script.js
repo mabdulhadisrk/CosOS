@@ -12,16 +12,12 @@ const controlCentre = document.getElementById('control-centre');
 const startMenuBtn = document.getElementById('StartMenuButton');
 const closePanelButton = document.getElementById('close-panel-btn');
 
-// Grabs taskbar apps layers
-
-const youtubeButton = document.getElementById('Youtube-button');
-const spotifyButton = document.getElementById('Spotify-button');
-const discordButton = document.getElementById('Discord-button');
-const hackclubButton = document.getElementById('hackclub-button');
-
 // Grabs existing in-HTML app-container elements
 
-const 
+const WindowAPP = document.querySelector('.appWindow');
+const AppViewport = document.getElementById('app-viewport');
+const appTitle = document.getElementById('app-title');
+const CloseAppCoreButton = document.getElementById('Close-appcore-button');
 
 // Grabs desktop app shortcut icon launchers
 
@@ -92,11 +88,6 @@ StoreButton.onclick = function(){
         backgroundImageSelect.click();
     }
 };
-    // Icon links to desktop
-
-    MusicButton.onclick = function(){
-
-    }
 
     // Taskbar Drawer 
 
