@@ -82,7 +82,10 @@ body{
     justify-content:center;
     border-radius:50px;
     z-index:101;
-    
+    transition: bottom 0.4s cubic-beizer (0.1,0.8,0.1,1);
+}
+#BottomTaskbar.Hidden-Taskbar{
+    bottom:-70px;
 }
 .App-Icon{
     display:flex;
@@ -119,11 +122,16 @@ body{
     font-family:'Segoe UI', sans-serif;
     text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
 }
-.Taskbar-Icon{
+#minimizeButton {
+    position:absolute;
+    left:47.5%;
+    top:-30px;
+    transform: translateX(-50);
+    font-weight:bold;
     color: white;
-    padding:5px 0px;
-    border-radius:70%;
-    width:38px;
+    border-radius:10px 10px 0 0;
+    width:32px;
+    height:20px;
     text-align:center;
     align-items:center;
     justify-content:center;
@@ -131,8 +139,8 @@ body{
     cursor:pointer;
     transition: all 0.2s ease-in-out;
 }
-.Taskbar-Icon:hover{
-    background-color:rgba(255,255,255,0.06);
+#minimizeButton:hover{
+    background-color:rgba(255,255,255,0.45);
     transform:scale(1.1);
 }
 /* Making it a Panel so it can appear when Title OS is clicked, and disappeared when the "✕" is clicked */

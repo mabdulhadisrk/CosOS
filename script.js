@@ -28,6 +28,10 @@ const closeTerminalButton = document.getElementById('close-terminal-btn');
 const terminalInput = document.getElementById('terminal-input');
 const terminalBody = document.querySelector('.terminal-body');
 
+// Grabs minimize button in bottom taskbar
+
+const MinimizeButton = document.getElementById('minimizeButton');
+
 // 2) Booting sequence Initialization
  
     // hides welcome screen and reveals the desktop screen
@@ -76,7 +80,21 @@ StoreButton.onclick = function(){
     }
 };
 
-// listens for user to select the image file
+    // Taskbar Drawer 
+
+    MinimizeButton.onclick =function(){
+        const taskbar = document.getElementById('BottomTaskbar');
+        if (taskbar.classList.contains('Hidden-Taskbar')){
+            // bring it back up
+            taskbar.classList.remove('Hidden-Taskbar');
+            MinimizeButton.innerText = "⌄"
+        } else {
+            taskbar.classList.add('Hidden-Taskbar');
+            MinimizeButton.innerText ="⌃";
+        }
+    };
+
+// listens for user to select the image file for LarOS Store
 
     backgroundImageSelect.onchange = function(){
         if (backgroundImageSelect.files && backgroundImageSelect.files[0]){
