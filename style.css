@@ -2,8 +2,10 @@ body{
     background-image: url(https://images.pexels.com/photos/956999/milky-way-starry-sky-night-sky-star-956999.jpeg);
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: cover;
+    background-position: center;
+    background-size: 120% 120%;
     overflow:hidden; /* locks the browser window ( no scrolling bars ), so that it feels like a OS desktop */
+    animation: spaceDrift 40s linear infinite;    /* animation for abckground image */
 }
 /* the welcome page */
  .WelcOS{
@@ -12,12 +14,15 @@ body{
     text-align:center;
     margin-top:200px;
 }
+#welcScreen{
+    transition: all opacity 0.6s ease-in-out;
+}
 .topline{
      color:white;
     text-align:center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-/* initializing button*/
+/* "initialize LarOS" button */
 .booting{
     text-align:center;
     background:transparent;
@@ -37,6 +42,8 @@ body{
     width: 100%;
     height: 100vh;
     position: relative;
+    opacity: 0;
+    pointer-events:none;
 }
 #TopBar{
     position:fixed;
@@ -82,11 +89,12 @@ body{
     justify-content:center;
     border-radius:50px;
     z-index:101;
-    transition: bottom 0.4s cubic-beizer (0.1,0.8,0.1,1);
+    transition: bottom 0.4s cubic-bezier(0.1,0.8,0.1,1);
 }
 #BottomTaskbar.Hidden-Taskbar{
     bottom:-76px;
 }
+/* The shortcuts whole part */
 .App-Icon{
     display:flex;
     flex-direction:column;
@@ -105,6 +113,7 @@ body{
     transform:scale(1.05); /* enlarging of the button */
 
 }
+/* the image (icon) of the shortcut */
 .IconView{
     font-size:30px;
     margin-bottom:6px;
@@ -312,4 +321,14 @@ padding: 15px 16px;
     flex-grow: 1;
     font-size: 12px;
     font-family:'Courier New', Courier, monospace;
+}
+@keyframes spaceDrift{
+    0%{
+        background-position: 0% 50%; 
+    }
+    50%{
+        background-position: 100% 50%;
+    }100%{
+        background-position: 0% 50%;
+    }
 }
