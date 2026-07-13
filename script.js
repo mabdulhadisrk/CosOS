@@ -84,7 +84,7 @@ StoreButton.onclick = function(){
             reader.onload = function(e){
                 document.body.style.backgroundImage = "url('" + e.target.result + "')";
             };
-            reader.readAsDataURL(bgImage.files[0]);
+            reader.readAsDataURL(backgroundImageSelect.files[0]);
         }
 };
 // 5) Live Clock System
