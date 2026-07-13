@@ -16,10 +16,16 @@ const closePanelButton = document.getElementById('close-panel-btn');
 
 const TerminalButton = document.getElementById('terminal-Button');
 const StoreButton = document.getElementById('LarOS-store-button');
+const MusicButton = document.getElementById('Music-button');
 
 // Grabs terminal window and its close button;
 const terminalWindow = document.getElementById('terminal-window');
 const closeTerminalButton = document.getElementById('close-terminal-btn');
+
+// Grabs terminal Input line and body for Input processing and printing 
+
+const terminalInput = document.getElementById('terminal-input');
+const terminalBody = document.querySelector('.terminal-body');
 
 // 2) Booting sequence Initialization
  
@@ -28,6 +34,7 @@ const closeTerminalButton = document.getElementById('close-terminal-btn');
     bootButton.onclick = function(){
     welcomePage.style.display = 'none';
     desktopPage.style.display = 'block';
+    initializeHardwareMonitoring();
 };
 
 // 3) Control Centre Logic
@@ -41,7 +48,7 @@ closePanelButton.onclick = function(){
     controlCentre.classList.remove('Active-Panel');
 }
 
-    // Click the "✕" in the panel force the active panel to shut back wit the smooth css transition
+    // Click the "✕" in the panel force the active panel to shut back with the smooth css transition
 
 // 4) Desktop Interactions and Alerts
      
