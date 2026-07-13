@@ -12,11 +12,22 @@ const controlCentre = document.getElementById('control-centre');
 const startMenuBtn = document.getElementById('StartMenuButton');
 const closePanelButton = document.getElementById('close-panel-btn');
 
+// Grabs taskbar apps layers
+
+const youtubeButton = document.getElementById('Youtube-button');
+const spotifyButton = document.getElementById('Spotify-button');
+const discordButton = document.getElementById('Discord-button');
+const hackclubButton = document.getElementById('hackclub-button');
+
+// Grabs existing in-HTML app-container elements
+
+const 
+
 // Grabs desktop app shortcut icon launchers
 
 const TerminalButton = document.getElementById('terminal-Button');
 const StoreButton = document.getElementById('LarOS-store-button');
-    const backgroundImageSelect = document.getElementById('bgImage');
+const backgroundImageSelect = document.getElementById('bgImage');
 const MusicButton = document.getElementById('Music-button');
 
 // Grabs terminal window and its close button;
@@ -81,6 +92,11 @@ StoreButton.onclick = function(){
         backgroundImageSelect.click();
     }
 };
+    // Icon links to desktop
+
+    MusicButton.onclick = function(){
+
+    }
 
     // Taskbar Drawer 
 
