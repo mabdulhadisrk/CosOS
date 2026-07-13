@@ -16,6 +16,7 @@ const closePanelButton = document.getElementById('close-panel-btn');
 
 const TerminalButton = document.getElementById('terminal-Button');
 const StoreButton = document.getElementById('LarOS-store-button');
+    const backgroundImageSelect = document.getElementById('bgImage');
 const MusicButton = document.getElementById('Music-button');
 
 // Grabs terminal window and its close button;
@@ -65,10 +66,25 @@ StoreButton.onclick = function(){
     let choice = prompt(
         "Welcome to LarOS Store!\nType a number to execute a protocol:\n\n1 - Open Friv ( Nostalgic Games website )\n2 - Open Wallpapers Selection"
     );
-    if (choice ==="1"") {
+    if (choice ==="1") {
         alert("🛰️ Connecting Friv!");
         window.open("https://www.friv.com/old/", "_blank");
+        } 
+    else if (choice === "2"){
+        alert("Please select an image file from your computer to change the current background image!");
+        backgroundImageSelect.click();
+    }
+};
 
+// listens for user to select the image file
+
+    backgroundImageSelect.onchange = function(){
+        if (backgroundImageSelect.files && backgroundImageSelect.files[0]){
+            let reader = new FileReader();
+            reader.onload = function(e){
+                document.body.style.backgroundImage = "url('" + e.target.result + "')";
+            };
+            reader.readAsDataURL(bgImage.files[0]);
         }
 };
     MusicButton.onclick = function(){
