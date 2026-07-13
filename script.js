@@ -56,6 +56,7 @@ closePanelButton.onclick = function(){
 
     TerminalButton.onclick = function(){
     terminalWindow.style.display = 'flex';
+    terminalInput.focus();
 };
     closeTerminalButton.onclick = function(){
     terminalWindow.style.display = 'none';
@@ -63,7 +64,9 @@ closePanelButton.onclick = function(){
 StoreButton.onclick = function(){
     alert("🛒 Opening LarOS Store... Establishing connection uplink.");
 };
-
+    MusicButton.onclick = function(){
+        alert("Opening spotify...");
+    }
 // 5) Live Clock System
 
     // runs automated background timer that runs every 1000 milliseconds (1s)
