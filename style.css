@@ -119,6 +119,22 @@ body{
     font-family:'Segoe UI', sans-serif;
     text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
 }
+.Taskbar-Icon{
+    color: white;
+    padding:5px 0px;
+    border-radius:70%;
+    width:38px;
+    text-align:center;
+    align-items:center;
+    justify-content:center;
+    display: flex;
+    cursor:pointer;
+    transition: all 0.2s ease-in-out;
+}
+.Taskbar-Icon:hover{
+    background-color:rgba(255,255,255,0.06);
+    transform:scale(1.1);
+}
 /* Making it a Panel so it can appear when Title OS is clicked, and disappeared when the "✕" is clicked */
 #control-centre{
     position: absolute;
