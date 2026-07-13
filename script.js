@@ -87,9 +87,6 @@ StoreButton.onclick = function(){
             reader.readAsDataURL(bgImage.files[0]);
         }
 };
-    MusicButton.onclick = function(){
-        alert("Opening Spotify...");
-    }
 // 5) Live Clock System
 
     // runs automated background timer that runs every 1000 milliseconds (1s)
