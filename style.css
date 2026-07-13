@@ -1,0 +1,275 @@
+body{
+    background-image: url(https://images.pexels.com/photos/956999/milky-way-starry-sky-night-sky-star-956999.jpeg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    overflow:hidden; /* locks the browser window ( no scrolling bars ), so that it feels like a OS desktop */
+}
+/* the welcome page */
+ .WelcOS{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:white;
+    text-align:center;
+    margin-top:200px;
+}
+.topline{
+     color:white;
+    text-align:center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+/* initializing button*/
+.booting{
+    text-align:center;
+    background:transparent;
+    color:white;
+    border:1px solid white;
+    border-radius:50px;
+    padding:12px 20px;
+    display:block;
+    margin:auto;
+    cursor:pointer;
+    transition: 0.1s;
+}
+.booting:hover{
+    transform: scale(1.1);
+}
+#DesktopScreen{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+#TopBar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:40px;
+    background-color:rgba(255,255,255,0.02);
+    backdrop-filter:blur(4px); /* creates a glass-effect by blurring the part of the screen */
+    -webkit-backdrop-filter: blur(4px); /* same as backdrop-filter, but used for Apple devices ( safari browser) */
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 20px;
+    box-sizing:border-box;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+/* making the main title OS an clickable thingy, which when clicked opens a panel ( control centre ) */
+#StartMenuButton{
+    cursor:pointer;
+    transition: opacity 0.2s;
+}
+#StartMenuButton:hover{
+    opacity:0.7;
+}
+/* styling the shortcuts such as LarOS Store and System Terminal */
+.shortcutGrid{
+    position:absolute;
+    left:20px;
+    top:60px;
+    gap:20px;
+    display:flex;
+    flex-direction:column;
+}
+.App-Icon{
+    display:flex;
+    flex-direction:column;
+    cursor:pointer;
+    justify-content: center;
+    align-items:center;
+    padding:9px;
+    border-radius:12px;
+    width:90px;
+    transition: background-color 0.2s , transform 0.2s;
+}
+.App-Icon:hover{
+    background: rgba(255,255,255,0.2);
+    backdrop-filter:blur(4px);
+    -webkit-backdrop-filter:blur(4px);
+    transform:scale(1.05); /* enlarging of the button */
+
+}
+.IconView{
+    font-size:30px;
+    margin-bottom:6px;
+    object-fit:contain;
+    width: 30px;
+    height:40px;
+    display:inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.IconName{
+    color:white;
+    font-size:12px;
+    text-align: center;
+    font-family:'Segoe UI', sans-serif;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+}
+/* Making it a Panel so it can appear when Title OS is clicked, and disappeared when the "✕" is clicked */
+#control-centre{
+    position: absolute;
+    top:40px;
+    left:0px;
+    width:300px;
+    height: calc(100vh - 40px);
+    color: white;
+    display:flex;
+    flex-direction:column;
+    font-family:'Segoe UI', sans-serif;
+    background:rgba(10,15,30,0.4);
+    border-right: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+    z-index:99; /* Sets 3D layer stacks */
+    transform: translateX(-101%); /* setting default place to the left most side */
+    transition: transform 0.3s cubic-bezier(0.1,0.7,0.1,1); /* opens the with beautiful css transition when title OS is clicked */
+}
+/* adding a class with active panel, which later can be accessed through js to trigger open the panel */
+#control-centre.Active-Panel{
+    transform: translateX(0);
+}
+/* setting up the main title character to perfect place */
+.lars{
+    height:400px;
+    position: absolute;
+    bottom:0px;
+    left:130px;
+}
+.panel-header{
+    display: flex;
+    justify-content:space-between;
+    padding: 15px 20px;
+    align-items:center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+.panel-header h3{
+    font-size:16px;
+    font-weight:500;
+    font-size:16px;
+}
+#close-panel-btn{
+    background:transparent;
+    color:white;
+    border:none;
+    cursor:pointer;
+    font-size:14px;
+    border-radius:5px;
+    padding:4px 8px; /* creates space */
+    transition:background-color 0.25s;
+}
+#close-panel-btn:hover{
+    background: rgba(255,255,255,0.1);
+}
+.Panel-body{
+    padding:20px;
+    gap:15px;
+    display: flex;
+    flex-direction:column;
+}
+.widget{
+    background: rgba(255,255,255, 0.03);
+    border-radius:10px;
+    padding:12px 15px;
+    gap:8px;
+    display: flex;
+    flex-direction:column;
+}
+.widget-Icon{
+    font-size: 22px;
+}
+.widget-info{
+    display:flex;
+    flex-direction: column;
+}
+.widget-name{
+    font-size: 14px;
+    color: rgba(255,255,255,0.5);
+}
+.widget-value{
+    font-size:15px;
+    margin-top:2px;
+    font-weight:500;
+}
+/* styling the window which is accessed when "System Terminal" is clicked */
+#terminal-window{
+    position:absolute;
+    top:25%;
+    left:35%;
+    width:460px;
+    height:280px;
+    background:rgba(0,0,0,0.65);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border:1px solid rgba(255,255,255,0.1);
+    border-radius:8px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+    display: flex;
+    flex-direction:column;
+    overflow:hidden;
+    z-index:100;
+}
+.terminal-title{
+    color:rgba(255,255,255,0.8);
+    font-size:13px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#close-terminal-btn{
+    border:none;
+    background: #9d2121;
+    color: white;
+    cursor: pointer;
+    border-radius:4px;
+    padding: 2px 6px;
+    transition: all 0.2s ease;
+}
+#close-terminal-btn:hover{
+    transform:scale(1.05);
+}
+.terminal-header{
+    display: flex;
+    color: rgba(255,255,255,0.08);
+    padding: 8px 14px;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.terminal-body{
+padding: 16px;
+flex-grow: 1;
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+gap:6px;
+overflow-y: auto; /* allows scrolling if the terminal history gets too long */
+}
+.terminal-line{
+    color:rgb(29, 181, 29);
+    margin:0;
+    font-size: 12px;
+    font-family:'Courier New', Courier, monospace;
+}
+#terminal-history{
+    display:flex;
+}
+.terminal-prompt{
+color:rgb(29,189,29);
+font-size: 12px;
+font-family:'Courier New', Courier, monospace;
+}
+.terminal-input-line{
+display:flex;
+align-items:center;
+gap:8px;
+margin-top:6px;
+}
+#terminal-input{
+    color:rgb(29,189,29);
+    background:transparent;
+    border:none;
+    outline:none;
+    flex-grow: 1;
+    font-size: 12px;
+    font-family:'Courier New', Courier, monospace;
+}

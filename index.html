@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> LarOS </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div id = "welcScreen">
+        <h1 class = "WelcOS"> Welcome to LarOS! </h1>
+        <p class = "topline">This is the beautiful interface for my OS</p>
+        <button id = "bootbutton" class = "booting">Initialize CosOS</button>
+        <img src ="Larsmain.png" alt = "logo" class = "lars">
+    </div>
+    <div id = "DesktopScreen" style = "display: none;">
+        <div id = "TopBar">
+            <span class = "SystemTitle" id = "StartMenuButton">🛰️LarOS Forces Control</span>
+            <span class = "ClockSystem">00:00:00</span>
+        </div>
+        <div id = "control-centre" class = "Hidden-Panel">
+                <div class = "panel-header">
+                    <h3> 🛰️LarOS Systems</h3>
+                    <button id = "close-panel-btn">✕</button>
+                </div>
+                <div class = "Panel-body">
+                    <div class = "widget">
+                        <span class = "widget-Icon">🔋</span>
+                        <div class = "widget-info">
+                            <span class ="widget-name">Lars Battery</span>
+                            <span class ="widget-value" id = "real-battery">90% (Charging)</span>
+                        </div>
+                    </div>
+                    <div class = "widget">
+                        <span class = "widget-Icon">📶</span>
+                        <div class = "widget-info">
+                            <span class = "widget-name">Deep Space Network</span>
+                            <span class = "widget-value" id = "real-network">SECURE CHANNEL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div class = "shortcutGrid">
+            <div class = "App-Icon" id = "terminal-Button">
+                <span class="IconView">💻</span>
+                <span class = "IconName">System Terminal</span>
+            </div>
+            <div class = "App-Icon" id = "LarOS-store-button">
+                <img class = "IconView" alt = "Store Icon" src ="Lars.png">
+                <span class = "IconName">LarOS Store</span>
+            </div>
+            <div class = "App-Icon" id = "Music-button">
+                <img class = "IconView" alt = "Music Icon" src = "https://static.vecteezy.com/system/resources/previews/023/986/728/non_2x/spotify-logo-spotify-logo-transparent-spotify-icon-transparent-free-free-png.png">
+                <span class = "IconName">Spotify</span>
+            </div>
+        </div>
+        <div id ="terminal-window" style = "display:none;">
+            <div class = "terminal-header">
+                <span class = "terminal-title">💻 system_core.sh</span>
+                <button id = "close-terminal-btn">✕</button>
+            </div>
+            <div class = "terminal-body">
+                <p class = "terminal-line">LarOS Kernel v1.0.0 Online...</p>
+                <p class = "terminal-line">Connection Established with local grids.</p>
+                <p class = "terminal-line">Ready for execution inputs.</p>
+            </div>
+            <div class = "terminal-input-line">
+                <span class = "terminal-prompt">LarOS:~ $</span>
+                <input type = "text" id = "terminal-input" autofocus autocomplete = "off">
+            </div>
+        </div>
+    </div>
+<script src="script.js"></script>
+</body>
+</html>
