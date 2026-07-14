@@ -15,12 +15,21 @@
         <img src ="Larsmain.png" alt = "logo" class = "lars">
     </div>
 
+    <!--The main desktop Screen-->
+
     <div id = "DesktopScreen">
+
+        <!--Creating a seperate bar at the top for adding Real-Time clock and cool look-->
         <div id = "TopBar">
             <span class = "SystemTitle" id = "StartMenuButton">🛰️LarOS Forces Control</span>
             <span class = "ClockSystem">00:00:00</span>
         </div>
+
+
         <input type = "file" id = "bgImage" accept = "image/*" style = "display: none;">
+
+        <!--Creating a sliding ( use of css ) panel-->
+
         <div id = "control-centre">
                 <div class = "panel-header">
                     <h3> 🛰️LarOS Systems</h3>
@@ -43,13 +52,6 @@
                     </div>
                 </div>
             </div>
-        <div class = "appWindow" style = "display: none;">
-            <div class = "core-header">
-                <span id = "app-title">Application Core</span>
-                <button id = "Close-appcore-button">✕</button>
-            </div>
-            <iframe id = "app-viewport" src = "" frameborder = "0"></iframe>
-        </div>
         <div id = "BottomTaskbar">
             <div id ="minimizeButton" title = "Minimize Taskbar">⌄</div>
             <div class = "App-Icon" id = "terminal-Button">
