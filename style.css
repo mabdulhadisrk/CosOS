@@ -16,7 +16,7 @@ body{
 }
 #welcScreen{
     position:absolute;
-    width:100vw;
+    width:100vw;           
     height:100vh;
     top:0;
     left:0;
@@ -44,7 +44,7 @@ body{
     transition: 0.1s;
 }
 .booting:hover{
-    transform: scale(1.1);
+    transform: scale(1.1); /* enlarging the button when hovering over it */
 }
 #DesktopScreen{
     width: 100%;
@@ -55,6 +55,7 @@ body{
     transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
     z-index: 1;
 }
+/* beautiful bar fixed at the top */
 #TopBar{
     position:fixed;
     top:0;
@@ -141,6 +142,8 @@ body{
     font-family:'Segoe UI', sans-serif;
     text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
 }
+
+/* small arrow to open / close the bottom bar */
 #minimizeButton {
     position:absolute;
     background:black;
