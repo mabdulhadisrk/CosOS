@@ -347,12 +347,30 @@ padding: 15px 16px;
 }
 .WeatherFlashC{
     position: absolute;
+    background-color: rgba(20, 13, 43, 0.364);
     top:130px;
     left:20%;
     width:180px;
     backdrop-filter:blur(8px);
     -webkit-backdrop-filter:blue(8px);
+    padding:18px;
+    box-shadow: 4px 4px 10px rgba(255,255,255,0.8);
+}
+.WeatherCtitle{
+    color:white;
+    font-size:20px;
+    font-weight:bold;
 }
 #TempL{
-
+    color: white;
+    text-align:right;
+}
+#statusL{
+    color:white;
+    font-weight:bold;
+}
+#refreshWL{
+    background:transparent;
+    border:none;
+    
 }
