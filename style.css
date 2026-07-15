@@ -345,12 +345,9 @@ padding: 15px 16px;
         background-position: 0% 50%;
     }
 }
-.appWindow{
-    position:absolute;
-    top:52px;
-    left:4%;
-    width:92%;
-    height:calc(100vh - 125px);
-    overflow:hidden;
-    flex-direction:column;
+.WeatherFlashC{
+    position: absolute;
+    top:100px;
+    
+
 }
