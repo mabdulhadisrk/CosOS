@@ -347,7 +347,12 @@ padding: 15px 16px;
 }
 .WeatherFlashC{
     position: absolute;
-    top:100px;
-    
+    top:130px;
+    left:20%;
+    width:180px;
+    backdrop-filter:blur(8px);
+    -webkit-backdrop-filter:blue(8px);
+}
+#TempL{
 
 }
