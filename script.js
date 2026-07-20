@@ -146,7 +146,6 @@ StoreButton.onclick = function(){
 
  // 7) Weather forecast logic :)
 
- const weatherApiKey = "YOUR_OPENWEATHERMAP_API_KEY";
  const tempElement = document.getElementById("TempL");
  const statusElement = document.getElementById("statusL");
  const resfreshWeatherButton = document.getElementById("refreshWL");
@@ -154,13 +153,14 @@ StoreButton.onclick = function(){
     async function fetchWeather(lat, lon) {
         statusElement.textContent = "Updating settlements...";
         try {
-            const response = await fetch('https://openweathermap.org{lat}&lon=$(lon)&units=metric&appid=${weatherApiKey}');
+            const response = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true`);
             if (!response.ok) throw new Error('Grid offline');
 
             const data = await response.json();
 
-            tempElement.textContent = '${Math.round(data.main.temp)}°C';
-            statusElement.textContent = '$(data.name): ${data.weather.description}';
+           const currentWeather = data.current_weather;
+            tempElement.textContent = `${Math.round(currentWeather.temperature)}°C`;
+            statusElement.textContent = "Live Temp";
         } catch (error) {
             console.error("Weather Error", error);
             statusElement.textContent = "Grid connection failed";
@@ -177,7 +177,7 @@ StoreButton.onclick = function(){
                 },
                 (error) => {
                     console.error("Geolocation Error", error );
-                    statusElement.textContect = "Location access denied";
+                    statusElement.textContent = "Location access denied";
                 }
             );
         } else {
@@ -187,5 +187,3 @@ StoreButton.onclick = function(){
     resfreshWeatherButton.onclick = function() {
         getSystemLocation();
     };
-
-    
