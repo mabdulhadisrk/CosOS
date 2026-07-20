@@ -49,6 +49,7 @@ const MinimizeButton = document.getElementById('minimizeButton');
     desktopPage.style.opacity ="1";
     desktopPage.style.visibility = "visible";
     initializeHardwareMonitoring();
+    getSystemLocation();
 };
 
 // 3) Control Centre Logic
@@ -141,3 +142,50 @@ StoreButton.onclick = function(){
         document.getElementById('real-battery').innerText = level + "%" + statusText;
     });
 },1000);
+
+
+ // 7) Weather forecast logic :)
+
+ const weatherApiKey = "YOUR_OPENWEATHERMAP_API_KEY";
+ const tempElement = document.getElementById("TempL");
+ const statusElement = document.getElementById("statusL");
+ const resfreshWeatherButton = document.getElementById("refreshWL");
+
+    async function fetchWeather(lat, lon) {
+        statusElement.textContent = "Updating settlements...";
+        try {
+            const response = await fetch('https://openweathermap.org{lat}&lon=$(lon)&units=metric&appid=${weatherApiKey}');
+            if (!response.ok) throw new Error('Grid offline');
+
+            const data = await response.json();
+
+            tempElement.textContent = '${Math.round(data.main.temp)}°C';
+            statusElement.textContent = '$(data.name): ${data.weather.description}';
+        } catch (error) {
+            console.error("Weather Error", error);
+            statusElement.textContent = "Grid connection failed";
+            tempElement.textContent = "---°C";
+        }
+    }
+    
+    function getSystemLocation (){
+        if (navigator.geolocation) {
+            statusElement.textContent = "Locating grid...";
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    fetchWeather(position.coords.latitude, position.coords.longitude);
+                },
+                (error) => {
+                    console.error("Geolocation Error", error );
+                    statusElement.textContect = "Location access denied";
+                }
+            );
+        } else {
+            statusElement.textContent = "Geolocation unsupported";
+        }
+    }
+    resfreshWeatherButton.onclick = function() {
+        getSystemLocation();
+    };
+
+    
